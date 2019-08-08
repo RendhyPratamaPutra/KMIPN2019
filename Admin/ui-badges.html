@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
 
+
     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
@@ -26,6 +27,49 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        top:  10px;
+
+        height: 300px;
+        width: 670px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #ffff;
+        padding: 5px;
+        border: 1px solid #9999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        width: 350px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+      #latlng {
+        
+      }
+    </style>
 
 
 
@@ -281,86 +325,50 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
-                    <div class="badges">
-                        <div class="col-lg-6">
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Badges</strong>
-                                    <small>Use <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:
-                                    </small>
-                                </div>
-                                <div class="card-body">
-
-                                    <a href="#">News <span class="badge badge-primary">5</span></a>
-                                    <br>
-                                    <a href="#">Comments <span class="badge badge-warning">10</span></a>
-                                    <br>
-                                    <a href="#">Updates <span class="badge badge-success">2</span></a>
-                                </div>
-                            </div><!-- /# card -->
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Labels</strong>
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
-                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
-
-                                    <h1>Example heading <span class="badge badge-secondary">New</span></h1>
-                                    <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-                                    <h3>Example heading <span class="badge badge-secondary">New</span></h3>
-                                    <h4>Example heading <span class="badge badge-secondary">New</span></h4>
-                                    <h5>Example heading <span class="badge badge-secondary">New</span></h5>
-                                    <h6>Example heading <span class="badge badge-secondary">New</span></h6>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Badges  in Buttons</strong>
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-muted m-b-15">Use the <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:</p>
-
-                                    <button type="button" class="btn btn-primary m-l-10 m-b-10">Primary <span class="badge badge-light">7</span></button>
-                                    <button type="button" class="btn btn-success m-l-10 m-b-10">Success <span class="badge badge-light">7</span></button>
-                                    <button type="button" class="btn btn-info m-l-10 m-b-10">Info <span class="badge badge-light">7</span></button>
-                                    <button type="button" class="btn btn-warning m-l-10 m-b-10">Warning <span class="badge badge-light">7</span></button>
-                                    <button type="button" class="btn btn-danger m-l-10 m-b-10">Danger <span class="badge badge-light">7</span></button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Labels</strong>
-                                </div>
-                                <div class="card-body">
-                                    <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
-                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
-
-                                    <span class="badge badge-primary">Primary</span>
-                                    <span class="badge badge-secondary">Secondary</span>
-                                    <span class="badge badge-success">Success</span>
-                                    <span class="badge badge-danger">Danger</span>
-                                    <span class="badge badge-warning">Warning</span>
-                                    <span class="badge badge-info">Info</span>
-                                    <span class="badge badge-light">Light</span>
-                                    <span class="badge badge-dark">Dark</span>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div> <!-- .badges -->
+                      <div class="col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <strong>Tambah Event</strong>
+                                                    </div>
+                                                    <div class="card-body card-block">
+                                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nae Event</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="text-input" name="name_event" placeholder="Nama Event" class="form-control"></div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="email-input" class=" form-control-label">Location Event</label></div>
+                                                                <div class="col-12 col-md-9"><input type="email" id="pac-input" name="address" placeholder="Location Event" class="form-control">
+                                                                <div id="map"></div></div>
+                                                                <input class="form-control col-md-4" type="text"  hidden="" id="latlong" name="longlat" placeholder="Enter email address">
+                                                                
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
+                                                                <div class="col-12 col-md-9"><textarea name="description" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div> 
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date & Time Event</label></div>
+                                                                <div class="col-12 col-md-9"><input type="text" id="text-input" name="time_date" placeholder="Date & Time Event" class="form-control"></div>
+                                                            </div>  
+                                                                <div class="row form-group">
+                                                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                                                                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="photo" class="form-control-file"></div>
+                                                                    <input type="test" name="status" hidden="" value="Diterima">
+                                                                </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <button type="submit" class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                                        </button>
+                                                        <button type="reset" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-ban"></i> Reset
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
 
                 </div><!-- .row -->
             </div><!-- .animated -->
@@ -371,6 +379,86 @@
 
     <!-- Right Panel -->
 
+    <script>
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -8.2230043, lng: 114.3653102},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Membuat Kotak pencarian terhubung dengan tampilan map
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+     
+
+        var markers = [];
+        // Mengaktifkan detail pada suatu tempat ketika pengguna
+        // memilih salah satu dari daftar prediksi tempat 
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // menghilangkan marker tempat sebelumnya
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // Untuk setiap tempat, dapatkan icon, nama dan tempat.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            
+
+            // Membuat Marker untuk setiap tempat
+            markers.push(new google.maps.Marker({
+
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location,
+              drag:true
+
+            }));
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+
+            if (place.geometry.viewport) {
+              bounds.union(place.geometry.viewport);
+              document.getElementById("latlong").value = lat+','+lng;      
+              //document.getElementById('lng').value=lng; 
+            } else {
+              bounds.extend(place.geometry.location);
+              
+            }
+          });
+          map.fitBounds(bounds);
+        });
+        google.maps.event.addListener(marker, 'drag', function() {
+ // ketika marker di drag, otomatis nilai latitude dan longitude
+ //menyesuaikan dengan posisi marker 
+        updateMarkerPosition(marker.getPosition());
+  });
+      }
+
+    </script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkE6oJvsyX4sRAw0QTt3R_gJClY0NtIFQ&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
