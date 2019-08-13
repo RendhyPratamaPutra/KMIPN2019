@@ -7,7 +7,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-
-		$this->load->view('Auth/index');
+		$data['title'] = 'SIGN IN - BERSIHNESIA';
+		$this->load->view('Auth/index', $data);
 	}
 }
